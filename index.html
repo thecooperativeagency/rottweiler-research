@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>The Original Rottweiler: How to Find Classic German Type (Not Giant American Bulk)</title>
   <meta name="description" content="A practical magazine guide to original German-type Rottweilers for family companion and guardian homes. What classic type looks like, health papers that matter, red flags, and breeders worth researching." />
   <meta name="theme-color" content="#f3eee5" />
@@ -14,369 +14,791 @@
   <style>
     :root {
       --paper: #f3eee5;
-      --paper-2: #e9e2d5;
       --ink: #1b1612;
       --ink-soft: rgba(27, 22, 18, 0.92);
       --muted: #5a5248;
       --faint: #887d70;
       --line: rgba(27, 22, 18, 0.10);
-      --line-strong: rgba(27, 22, 18, 0.16);
       --accent: #9a3412;
       --accent-deep: #78260b;
       --accent-soft: rgba(154, 52, 18, 0.10);
       --forest: #2d4a38;
       --forest-soft: rgba(45, 74, 56, 0.10);
-      --gold: #8f6d1c;
       --gold-soft: rgba(143, 109, 28, 0.12);
+      --gold-text: #745612;
       --danger: #8a2f2f;
       --dark: #15110e;
-      --max: 1120px;
-      --read: 680px;
+      --max: 1080px;
       --serif: "Fraunces", Georgia, serif;
-      --sans: "Source Sans 3", system-ui, sans-serif;
+      --sans: "Source Sans 3", system-ui, -apple-system, sans-serif;
       --mono: "JetBrains Mono", ui-monospace, monospace;
-      --shadow: 0 1px 2px rgba(27,22,18,.04), 0 14px 40px rgba(27,22,18,.08);
-      --radius: 16px;
+      --shadow: 0 1px 2px rgba(27,22,18,.04), 0 12px 32px rgba(27,22,18,.07);
+      --radius: 14px;
+      --pad: clamp(1rem, 4vw, 1.25rem);
     }
+
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       * { animation: none !important; transition: none !important; }
     }
+
     body {
       margin: 0;
       font-family: var(--sans);
       color: var(--ink-soft);
       background: var(--paper);
-      line-height: 1.62;
-      font-size: 18px;
+      line-height: 1.6;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
     }
-    img { max-width: 100%; display: block; }
+
+    img { max-width: 100%; height: auto; display: block; }
     a { color: var(--accent); text-underline-offset: 3px; }
     a:hover { color: var(--accent-deep); }
-    .wrap { width: min(var(--max), calc(100% - 2.25rem)); margin: 0 auto; }
-    .read { width: min(var(--read), 100%); margin-inline: auto; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - (var(--pad) * 2)));
+      margin: 0 auto;
+    }
 
     /* Masthead */
     .masthead {
-      position: sticky; top: 0; z-index: 40;
-      backdrop-filter: blur(12px);
-      background: rgba(243,238,229,.9);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(243, 238, 229, 0.94);
       border-bottom: 1px solid var(--line);
     }
     .mast-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; padding: .8rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .7rem 0;
+      min-height: 3rem;
     }
     .brand strong {
-      font-family: var(--serif); font-size: 1rem; letter-spacing: -.02em; color: var(--ink);
+      font-family: var(--serif);
+      font-size: .98rem;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      display: block;
+      line-height: 1.15;
     }
     .brand span {
-      display: block; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--faint); font-weight: 700; margin-top: .1rem;
+      display: block;
+      font-size: .62rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--faint);
+      font-weight: 700;
+      margin-top: .15rem;
     }
-    .nav { display: flex; flex-wrap: wrap; gap: .15rem; justify-content: flex-end; }
+    .nav {
+      display: none;
+      flex-wrap: wrap;
+      gap: .1rem;
+      justify-content: flex-end;
+    }
     .nav a {
-      text-decoration: none; color: var(--muted); font-size: .78rem; font-weight: 600;
-      padding: .38rem .55rem; border-radius: 999px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 600;
+      padding: .35rem .5rem;
+      border-radius: 999px;
     }
     .nav a:hover { color: var(--ink); background: rgba(27,22,18,.05); }
 
-    /* Hero */
+    /* Hero — mobile first */
     .hero {
-      position: relative; min-height: min(86vh, 780px);
-      display: grid; align-items: end; color: #f6f0e7; overflow: hidden; isolation: isolate;
+      position: relative;
+      min-height: 78svh;
+      display: grid;
+      align-items: end;
+      color: #f6f0e7;
+      overflow: hidden;
+      isolation: isolate;
     }
-    .hero-media { position: absolute; inset: 0; z-index: -2; }
-    .hero-media img {
-      width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%;
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    .hero-media img,
+    .hero-media picture,
+    .hero-media picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-media img,
+    .hero-media picture img {
+      object-position: 50% 35%;
     }
     .hero-scrim {
-      position: absolute; inset: 0; z-index: -1;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
       background:
-        linear-gradient(105deg, rgba(21,17,14,.88) 0%, rgba(21,17,14,.55) 46%, rgba(21,17,14,.22) 72%),
-        linear-gradient(180deg, rgba(21,17,14,.2) 0%, rgba(21,17,14,.1) 35%, rgba(21,17,14,.78) 78%, rgba(21,17,14,.95) 100%);
+        linear-gradient(180deg, rgba(21,17,14,.35) 0%, rgba(21,17,14,.15) 28%, rgba(21,17,14,.55) 58%, rgba(21,17,14,.92) 100%);
     }
-    .hero-copy { padding: 4.2rem 0 3rem; max-width: 760px; }
+    .hero-copy {
+      padding: 5.5rem var(--pad) 1.75rem;
+      max-width: 40rem;
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
     .kicker {
-      display: inline-flex; align-items: center; gap: .55rem;
-      font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-      color: #e4b296; margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #e4b296;
+      margin-bottom: .85rem;
     }
-    .kicker::before { content: ""; width: 1.4rem; height: 1px; background: currentColor; }
+    .kicker::before {
+      content: "";
+      width: 1.2rem;
+      height: 1px;
+      background: currentColor;
+    }
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(2.5rem, 6.6vw, 4.7rem);
-      line-height: .98; letter-spacing: -.035em; font-weight: 600;
-      margin: 0 0 1rem; color: #fff8ef; max-width: 12ch; text-wrap: balance;
+      font-size: clamp(2.35rem, 9vw, 4.4rem);
+      line-height: .98;
+      letter-spacing: -.035em;
+      font-weight: 600;
+      margin: 0 0 .85rem;
+      color: #fff8ef;
+      max-width: 11ch;
+      text-wrap: balance;
     }
     .hero-deck {
-      font-size: clamp(1.08rem, 2vw, 1.28rem); line-height: 1.45;
-      max-width: 36ch; color: rgba(246,240,231,.88); margin: 0 0 1.4rem;
+      font-size: clamp(1rem, 3.6vw, 1.22rem);
+      line-height: 1.45;
+      max-width: 32ch;
+      color: rgba(246,240,231,.9);
+      margin: 0 0 1.15rem;
     }
     .hero-meta {
-      display: flex; flex-wrap: wrap; gap: .55rem .9rem;
-      font-size: .88rem; color: rgba(246,240,231,.7);
-      border-top: 1px solid rgba(246,240,231,.18); padding-top: .9rem;
+      display: grid;
+      gap: .35rem;
+      font-size: .88rem;
+      color: rgba(246,240,231,.78);
+      border-top: 1px solid rgba(246,240,231,.18);
+      padding-top: .85rem;
     }
-    .hero-meta b { color: #fff8ef; font-weight: 600; }
+    .hero-meta b {
+      color: #fff8ef;
+      font-weight: 600;
+      margin-right: .35rem;
+    }
 
     .issue {
-      background: var(--dark); color: rgba(246,240,231,.7); font-size: .8rem;
+      background: var(--dark);
+      color: rgba(246,240,231,.72);
+      font-size: .78rem;
     }
     .issue .wrap {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.2rem;
+      display: grid;
+      gap: .25rem;
       padding: .7rem 0;
     }
     .issue strong { color: #fff8ef; }
 
     /* Chapters */
-    section.ch { padding: 4.2rem 0 1rem; scroll-margin-top: 4rem; }
+    section.ch {
+      padding: 3rem 0 0.5rem;
+      scroll-margin-top: 4.25rem;
+    }
     .label {
-      font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-      color: var(--accent); margin: 0 0 .65rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 .55rem;
     }
     h2.d {
-      font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.9rem);
-      line-height: 1.05; letter-spacing: -.03em; color: var(--ink);
-      margin: 0 0 1rem; font-weight: 600; max-width: 16ch; text-wrap: balance;
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 6.5vw, 2.75rem);
+      line-height: 1.06;
+      letter-spacing: -.03em;
+      color: var(--ink);
+      margin: 0 0 .85rem;
+      font-weight: 600;
+      max-width: 14ch;
+      text-wrap: balance;
     }
     .lede {
-      font-size: 1.15rem; line-height: 1.5; color: var(--muted);
-      max-width: 40ch; margin: 0 0 1.6rem;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 38ch;
+      margin: 0 0 1.35rem;
     }
-    .prose p { margin: 0 0 1.1rem; max-width: 62ch; }
+    .prose p {
+      margin: 0 0 1rem;
+      max-width: 62ch;
+    }
     .prose .drop::first-letter {
-      font-family: var(--serif); font-weight: 600; font-size: 3.25em;
-      float: left; line-height: .82; padding: .1em .1em 0 0; color: var(--accent);
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 3.05em;
+      float: left;
+      line-height: .82;
+      padding: .08em .1em 0 0;
+      color: var(--accent);
     }
     .pull {
-      font-family: var(--serif); font-size: clamp(1.45rem, 2.8vw, 1.95rem);
-      line-height: 1.25; letter-spacing: -.02em; color: var(--ink);
-      border-left: 3px solid var(--accent); padding: .15rem 0 .15rem 1.1rem;
-      margin: 1.8rem 0; max-width: 26ch; font-weight: 500;
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 5vw, 1.85rem);
+      line-height: 1.25;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding: .1rem 0 .1rem 1rem;
+      margin: 1.5rem 0;
+      max-width: 24ch;
+      font-weight: 500;
     }
 
     /* Photos */
-    .spread { display: grid; gap: .7rem; margin: 1.8rem 0 2.2rem; }
-    .spread.duo { grid-template-columns: 1.25fr 1fr; }
-    .spread.trio { grid-template-columns: 1fr 1fr 1fr; }
-    @media (max-width: 800px) {
-      .spread.duo, .spread.trio { grid-template-columns: 1fr; }
-      .nav { display: none; }
+    .spread {
+      display: grid;
+      gap: .65rem;
+      margin: 1.5rem 0 1.85rem;
     }
+    .spread.duo,
+    .spread.trio { grid-template-columns: 1fr; }
     figure.shot {
-      margin: 0; border-radius: 6px; overflow: hidden; background: #d8d0c2; box-shadow: var(--shadow);
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #d8d0c2;
+      box-shadow: var(--shadow);
     }
-    figure.shot img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
-    figure.shot.tall img { aspect-ratio: 3/4; }
-    figure.shot.wide img { aspect-ratio: 16/10; }
+    figure.shot img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    figure.shot.portrait img { aspect-ratio: 3 / 4; object-position: 50% 20%; }
+    figure.shot.wide img { aspect-ratio: 16 / 10; }
     figcaption {
-      font-size: .78rem; color: var(--faint); margin-top: .4rem; line-height: 1.4;
+      font-size: .76rem;
+      color: var(--faint);
+      margin-top: .4rem;
+      line-height: 1.4;
     }
 
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+    .band-photo {
+      margin: 1.75rem calc(var(--pad) * -1) 0;
+      overflow: hidden;
+      background: #1a1511;
+    }
+    .band-photo img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: 50% 45%;
+    }
+    .band-photo + figcaption {
+      margin-top: .55rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .85rem;
+    }
     .panel {
-      background: #fffcf7; border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 1.15rem 1.2rem; box-shadow: var(--shadow);
+      background: #fffcf7;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.05rem 1.05rem;
+      box-shadow: var(--shadow);
     }
     .panel h3 {
-      font-family: var(--serif); font-size: 1.2rem; margin: 0 0 .65rem;
-      letter-spacing: -.02em; color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      margin: 0 0 .55rem;
+      letter-spacing: -.02em;
+      color: var(--ink);
     }
     .panel.want { border-top: 3px solid var(--forest); }
     .panel.avoid { border-top: 3px solid var(--danger); }
-    .panel ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
-    .panel li { margin: .32rem 0; }
+    .panel ul {
+      margin: 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
+    }
+    .panel li { margin: .3rem 0; }
 
-    .table-shell {
-      overflow: auto; border: 1px solid var(--line); border-radius: var(--radius);
-      background: #fffcf7; box-shadow: var(--shadow); margin: 1.4rem 0;
+    /* Spec cards instead of wide tables on mobile */
+    .spec-list,
+    .pass-list {
+      display: grid;
+      gap: .7rem;
+      margin: 1.25rem 0;
     }
-    table { width: 100%; border-collapse: collapse; min-width: 600px; font-size: .94rem; }
-    th, td { text-align: left; padding: .9rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th {
-      font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint);
-      background: rgba(27,22,18,.03);
+    .spec-card,
+    .pass-card {
+      background: #fffcf7;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .95rem 1rem;
+      box-shadow: var(--shadow);
     }
-    tr:last-child td { border-bottom: 0; }
-    td strong { color: var(--ink); }
-    .bad { color: var(--danger); }
+    .spec-card h4,
+    .pass-card h4 {
+      margin: 0 0 .35rem;
+      font-size: .95rem;
+      color: var(--ink);
+      font-family: var(--serif);
+      letter-spacing: -.01em;
+    }
+    .spec-card p,
+    .pass-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .spec-card .bad,
+    .pass-card h4 {
+      color: var(--danger);
+    }
+    .spec-card .ok { color: var(--forest); font-weight: 600; font-size: .82rem; }
+    .spec-card .warn-label {
+      display: block;
+      margin-top: .45rem;
+      color: var(--danger);
+      font-size: .86rem;
+    }
 
     /* Size board */
     .size-board {
-      display: grid; grid-template-columns: 1.05fr .95fr; gap: 1rem; margin: 1.8rem 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .85rem;
+      margin: 1.5rem 0;
     }
-    @media (max-width: 840px) { .size-board { grid-template-columns: 1fr; } }
     .size-visual {
       background: linear-gradient(160deg, #1d1712, #2a211a 60%, #3a2a1e);
-      color: #f3eee5; border-radius: var(--radius); padding: 1.3rem 1.2rem; min-height: 300px;
+      color: #f3eee5;
+      border-radius: var(--radius);
+      padding: 1.15rem 1.05rem 1.05rem;
     }
-    .size-visual h3 { font-family: var(--serif); margin: 0 0 .35rem; font-size: 1.3rem; }
-    .size-visual p { margin: 0 0 1rem; color: rgba(243,238,229,.68); font-size: .9rem; }
-    .sils { display: flex; align-items: end; gap: 1rem; height: 170px; border-bottom: 1px solid rgba(243,238,229,.16); margin-bottom: .85rem; padding: 0 .3rem; }
-    .sil { flex: 1; display: flex; flex-direction: column; align-items: center; gap: .4rem; }
+    .size-visual h3 {
+      font-family: var(--serif);
+      margin: 0 0 .3rem;
+      font-size: 1.2rem;
+    }
+    .size-visual > p {
+      margin: 0 0 .9rem;
+      color: rgba(243,238,229,.68);
+      font-size: .88rem;
+    }
+    .sils {
+      display: flex;
+      align-items: end;
+      gap: .75rem;
+      height: 150px;
+      border-bottom: 1px solid rgba(243,238,229,.16);
+      margin-bottom: .75rem;
+      padding: 0 .2rem;
+    }
+    .sil {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .35rem;
+    }
     .sil .b {
-      width: 100%; max-width: 88px; border-radius: 40% 40% 28% 28% / 55% 55% 35% 35%;
-      background: linear-gradient(180deg, rgba(243,238,229,.92), rgba(243,238,229,.55)); position: relative;
+      width: 100%;
+      max-width: 78px;
+      border-radius: 40% 40% 28% 28% / 55% 55% 35% 35%;
+      background: linear-gradient(180deg, rgba(243,238,229,.92), rgba(243,238,229,.55));
+      position: relative;
     }
     .sil .b::before {
-      content: ""; position: absolute; left: 58%; bottom: 62%; width: 42%; height: 38%;
-      background: inherit; border-radius: 45% 50% 40% 45%;
+      content: "";
+      position: absolute;
+      left: 58%;
+      bottom: 62%;
+      width: 42%;
+      height: 38%;
+      background: inherit;
+      border-radius: 45% 50% 40% 45%;
     }
-    .sil.c .b { height: 112px; }
-    .sil.o .b { height: 132px; opacity: .85; }
+    .sil.c .b { height: 100px; }
+    .sil.o .b { height: 118px; opacity: .85; }
     .sil.w .b {
-      height: 160px; max-width: 112px;
+      height: 142px;
+      max-width: 98px;
       background: linear-gradient(180deg, rgba(196,120,90,.75), rgba(140,70,45,.55));
     }
     .sil span {
-      font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
-      color: rgba(243,238,229,.7); text-align: center;
+      font-size: .65rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(243,238,229,.7);
+      text-align: center;
+      line-height: 1.25;
     }
-    .notes { display: grid; gap: .7rem; }
+    .notes { display: grid; gap: .65rem; }
     .note {
-      background: #fffcf7; border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1rem;
+      background: #fffcf7;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .85rem .95rem;
     }
-    .note b { display: block; font-family: var(--serif); color: var(--ink); margin-bottom: .15rem; }
-    .note span { color: var(--muted); font-size: .92rem; }
+    .note b {
+      display: block;
+      font-family: var(--serif);
+      color: var(--ink);
+      margin-bottom: .12rem;
+    }
+    .note span { color: var(--muted); font-size: .9rem; }
 
     /* Decoder */
     .terms {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1.3rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .65rem;
+      margin-top: 1.15rem;
     }
-    @media (max-width: 900px) { .terms { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .terms { grid-template-columns: 1fr; } }
     .term {
-      background: #fffcf7; border: 1px solid var(--line); border-radius: 12px; padding: .95rem;
+      background: #fffcf7;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .9rem;
     }
     .term .cat {
-      font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--faint);
-      font-weight: 700; margin-bottom: .35rem;
+      font-size: .64rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--faint);
+      font-weight: 700;
+      margin-bottom: .3rem;
     }
     .term code {
-      font-family: var(--mono); font-size: .82rem; color: var(--accent-deep);
-      background: var(--accent-soft); padding: .12rem .38rem; border-radius: 5px;
+      font-family: var(--mono);
+      font-size: .8rem;
+      color: var(--accent-deep);
+      background: var(--accent-soft);
+      padding: .12rem .36rem;
+      border-radius: 5px;
+      word-break: break-word;
     }
-    .term p { margin: .5rem 0 0; color: var(--muted); font-size: .9rem; line-height: 1.45; }
+    .term p {
+      margin: .45rem 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.45;
+    }
 
-    /* Breeder cards with screenshots */
-    .breeder-grid { display: grid; gap: 1.25rem; margin-top: 1.4rem; }
+    .ask {
+      background: var(--dark);
+      color: rgba(243,238,229,.82);
+      border-radius: 16px;
+      padding: 1.15rem 1.05rem;
+      margin-top: 1.15rem;
+      box-shadow: var(--shadow);
+    }
+    .ask h3 {
+      font-family: var(--serif);
+      color: #fff8ef;
+      margin: 0 0 .7rem;
+      font-size: 1.15rem;
+    }
+    .ask ol { margin: 0; padding-left: 1.1rem; }
+    .ask li { margin: .38rem 0; }
+    .ask strong { color: #fff8ef; }
+
+    /* Clubs + breeders */
+    .club-row,
+    .breeder-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.15rem;
+    }
+    .club,
     .breeder {
-      display: grid; grid-template-columns: minmax(220px, .95fr) 1.2fr;
-      background: #fffcf7; border: 1px solid var(--line); border-radius: 18px;
-      overflow: hidden; box-shadow: var(--shadow);
+      background: #fffcf7;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
-    @media (max-width: 820px) { .breeder { grid-template-columns: 1fr; } }
+    .club-shot,
     .breeder-shot {
-      position: relative; background: #1a1511; min-height: 220px;
-      border-right: 1px solid var(--line);
+      position: relative;
+      background: #1a1511;
+      border-bottom: 1px solid var(--line);
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
     }
-    @media (max-width: 820px) { .breeder-shot { border-right: 0; border-bottom: 1px solid var(--line); min-height: 180px; } }
+    .club-shot img,
     .breeder-shot img {
-      width: 100%; height: 100%; object-fit: cover; object-position: top center;
-      position: absolute; inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-fit: cover;
+      object-position: top center;
     }
-    .breeder-shot .rank-pill {
-      position: absolute; top: .75rem; left: .75rem; z-index: 2;
-      background: rgba(21,17,14,.88); color: #fff8ef; font-size: .72rem; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase; padding: .4rem .65rem; border-radius: 999px;
-      border: 1px solid rgba(255,248,239,.15);
+    .rank-pill {
+      position: absolute;
+      top: .65rem;
+      left: .65rem;
+      z-index: 2;
+      background: rgba(21,17,14,.9);
+      color: #fff8ef;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .38rem .6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,248,239,.14);
     }
-    .breeder-shot .rank-pill.t2 { color: #e6d08a; }
-    .breeder-body { padding: 1.15rem 1.2rem 1.15rem; }
+    .rank-pill.t2 { color: #e6d08a; }
+    .club .pad,
+    .breeder-body { padding: 1rem 1rem 1.05rem; }
+    .club h3,
     .breeder-body h3 {
-      font-family: var(--serif); font-size: 1.35rem; margin: 0 0 .2rem;
-      letter-spacing: -.02em; color: var(--ink);
+      font-family: var(--serif);
+      margin: 0 0 .2rem;
+      font-size: 1.2rem;
+      color: var(--ink);
+      letter-spacing: -.02em;
     }
-    .where { color: var(--faint); font-size: .86rem; font-weight: 600; margin-bottom: .65rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: .32rem; margin: 0 0 .7rem; }
+    .where {
+      color: var(--faint);
+      font-size: .84rem;
+      font-weight: 600;
+      margin-bottom: .55rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin: 0 0 .6rem;
+    }
     .tag {
-      font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
-      padding: .25rem .5rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: .24rem .48rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
     }
-    .tag.good { background: var(--forest-soft); color: var(--forest); border-color: rgba(45,74,56,.18); }
-    .tag.warn { background: var(--gold-soft); color: #745612; border-color: rgba(143,109,28,.22); }
-    .breeder-body p { margin: 0 0 .65rem; color: var(--muted); font-size: .95rem; }
+    .tag.good {
+      background: var(--forest-soft);
+      color: var(--forest);
+      border-color: rgba(45,74,56,.18);
+    }
+    .tag.warn {
+      background: var(--gold-soft);
+      color: var(--gold-text);
+      border-color: rgba(143,109,28,.22);
+    }
+    .club p,
+    .breeder-body p {
+      margin: 0 0 .6rem;
+      color: var(--muted);
+      font-size: .93rem;
+    }
     .caveat {
-      background: rgba(143,109,28,.08); border: 1px solid rgba(143,109,28,.18);
-      color: #6a5014; border-radius: 10px; padding: .6rem .75rem; font-size: .88rem; margin: 0 0 .75rem;
+      background: rgba(143,109,28,.08);
+      border: 1px solid rgba(143,109,28,.18);
+      color: #6a5014;
+      border-radius: 10px;
+      padding: .55rem .7rem;
+      font-size: .86rem;
+      margin: 0 0 .7rem;
     }
-    .links { display: flex; flex-wrap: wrap; gap: .4rem .85rem; font-size: .9rem; font-weight: 600; }
-
-    /* Club strip */
-    .club-row {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.2rem;
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem .75rem;
+      font-size: .9rem;
+      font-weight: 600;
     }
-    @media (max-width: 720px) { .club-row { grid-template-columns: 1fr; } }
-    .club {
-      background: #fffcf7; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);
-    }
-    .club img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top center; border-bottom: 1px solid var(--line); }
-    .club .pad { padding: 1rem 1.05rem 1.1rem; }
-    .club h3 { font-family: var(--serif); margin: 0 0 .35rem; font-size: 1.15rem; color: var(--ink); }
-    .club p { margin: 0 0 .7rem; color: var(--muted); font-size: .92rem; }
 
     /* Steps */
     .steps {
-      counter-reset: s; list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .85rem;
+      counter-reset: s;
+      list-style: none;
+      margin: 1.1rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: .7rem;
     }
     .steps li {
-      counter-increment: s; display: grid; grid-template-columns: 2.1rem 1fr; gap: .75rem;
-      background: #fffcf7; border: 1px solid var(--line); border-radius: 14px; padding: .95rem 1rem;
+      counter-increment: s;
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: .7rem;
+      background: #fffcf7;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .9rem .9rem;
     }
     .steps li::before {
-      content: counter(s); width: 2.1rem; height: 2.1rem; border-radius: 50%;
-      display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-deep);
-      font-weight: 700; font-size: .9rem; border: 1px solid rgba(154,52,18,.25);
+      content: counter(s);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-weight: 700;
+      font-size: .85rem;
+      border: 1px solid rgba(154,52,18,.25);
     }
-    .steps strong { display: block; color: var(--ink); font-family: var(--serif); font-size: 1.08rem; margin-bottom: .15rem; }
-    .steps span { color: var(--muted); font-size: .93rem; }
+    .steps strong {
+      display: block;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.02rem;
+      margin-bottom: .12rem;
+    }
+    .steps span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
 
-    /* Checklist */
-    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
-    @media (max-width: 700px) { .check-grid { grid-template-columns: 1fr; } }
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .85rem;
+      margin-top: 1rem;
+    }
     .checks { list-style: none; margin: 0; padding: 0; }
     .checks li {
-      display: grid; grid-template-columns: 1.05rem 1fr; gap: .6rem; align-items: start;
-      color: var(--muted); padding: .5rem 0; border-bottom: 1px dashed var(--line); font-size: .94rem;
+      display: grid;
+      grid-template-columns: 1rem 1fr;
+      gap: .55rem;
+      align-items: start;
+      color: var(--muted);
+      padding: .48rem 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: .92rem;
     }
     .checks li:last-child { border-bottom: 0; }
     .box {
-      width: 1rem; height: 1rem; border: 1.5px solid var(--faint); border-radius: 3px; margin-top: .2rem;
+      width: .95rem;
+      height: .95rem;
+      border: 1.5px solid var(--faint);
+      border-radius: 3px;
+      margin-top: .18rem;
     }
-
-    /* Ask list */
-    .ask {
-      background: var(--dark); color: rgba(243,238,229,.8); border-radius: 18px;
-      padding: 1.35rem 1.3rem; margin-top: 1.2rem; box-shadow: var(--shadow);
-    }
-    .ask h3 { font-family: var(--serif); color: #fff8ef; margin: 0 0 .8rem; font-size: 1.25rem; }
-    .ask ol { margin: 0; padding-left: 1.15rem; }
-    .ask li { margin: .4rem 0; }
-    .ask strong { color: #fff8ef; }
-
-    .pass td:first-child { color: var(--danger); font-weight: 700; }
 
     .resources {
-      columns: 2; column-gap: 2rem; margin: 0; padding-left: 1.1rem; color: var(--muted);
+      margin: 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
     }
-    @media (max-width: 700px) { .resources { columns: 1; } }
-    .resources li { break-inside: avoid; margin: .35rem 0; }
+    .resources li { margin: .35rem 0; }
 
     footer {
-      margin-top: 3.5rem; padding: 2rem 0 2.5rem; border-top: 1px solid var(--line);
-      color: var(--faint); font-size: .84rem;
+      margin-top: 2.75rem;
+      padding: 1.6rem 0 calc(1.8rem + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line);
+      color: var(--faint);
+      font-size: .82rem;
     }
-    footer .cols { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.2rem; }
-    @media (max-width: 700px) { footer .cols { grid-template-columns: 1fr; } }
+    footer .cols {
+      display: grid;
+      gap: 1rem;
+    }
     footer strong { color: var(--muted); }
+    footer code {
+      font-family: var(--mono);
+      font-size: .78rem;
+    }
 
-    .full-bleed { width: 100vw; margin-left: calc(50% - 50vw); }
-    .full-bleed img { width: 100%; aspect-ratio: 21/9; object-fit: cover; object-position: 50% 45%; }
+    /* Desktop enhancements */
+    @media (min-width: 760px) {
+      body { font-size: 18px; }
+      .nav { display: flex; }
+      .hero {
+        min-height: min(84vh, 760px);
+      }
+      .hero-media img,
+      .hero-media picture img {
+        object-position: 42% 40%;
+      }
+      .hero-scrim {
+        background:
+          linear-gradient(105deg, rgba(21,17,14,.88) 0%, rgba(21,17,14,.5) 48%, rgba(21,17,14,.2) 74%),
+          linear-gradient(180deg, rgba(21,17,14,.18) 0%, rgba(21,17,14,.08) 34%, rgba(21,17,14,.72) 78%, rgba(21,17,14,.94) 100%);
+      }
+      .hero-copy {
+        padding: 4.5rem 0 2.6rem;
+        margin: 0;
+        width: min(var(--max), calc(100% - (var(--pad) * 2)));
+      }
+      .hero-meta {
+        grid-template-columns: repeat(3, auto);
+        gap: .55rem 1.2rem;
+        justify-content: start;
+      }
+      .issue .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: .5rem 1.2rem;
+      }
+      section.ch { padding-top: 3.75rem; }
+      .spread.duo { grid-template-columns: 1.2fr .9fr; }
+      .spread.trio { grid-template-columns: 1fr 1fr 1fr; }
+      .grid-2,
+      .check-grid,
+      .size-board,
+      .club-row { grid-template-columns: 1fr 1fr; }
+      .terms { grid-template-columns: 1fr 1fr 1fr; }
+      .breeder {
+        display: grid;
+        grid-template-columns: minmax(240px, .9fr) 1.2fr;
+      }
+      .breeder-shot {
+        border-bottom: 0;
+        border-right: 1px solid var(--line);
+        aspect-ratio: auto;
+        min-height: 100%;
+      }
+      .band-photo {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: 100vw;
+        max-width: 100vw;
+      }
+      .band-photo img { aspect-ratio: 21 / 9; }
+      footer .cols { grid-template-columns: 1.3fr 1fr; }
+    }
+
+    @media (min-width: 980px) {
+      .terms { grid-template-columns: repeat(4, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -388,26 +810,29 @@
       </div>
       <nav class="nav" aria-label="Sections">
         <a href="#why">Why type</a>
-        <a href="#look">What to look for</a>
+        <a href="#look">Look for</a>
         <a href="#papers">Papers</a>
         <a href="#breeders">Breeders</a>
         <a href="#buy">How to buy</a>
-        <a href="#skip">Skip list</a>
+        <a href="#skip">Skip</a>
       </nav>
     </div>
   </header>
 
   <div class="hero">
     <div class="hero-media">
-      <img src="assets/images/01-stack.jpg" alt="Classic stacked Rottweiler showing compact athletic German type" />
+      <picture>
+        <source media="(max-width: 759px)" srcset="assets/images/profile.jpg" />
+        <img src="assets/images/hero.jpg" alt="Classic German-type Rottweiler with strong proportional structure" width="1000" height="760" />
+      </picture>
     </div>
-    <div class="hero-scrim"></div>
-    <div class="wrap hero-copy">
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-copy">
       <div class="kicker">A buyer’s magazine guide</div>
       <h1>The original Rottweiler</h1>
       <p class="hero-deck">
         How to find classic German type for a family companion and guardian —
-        not the oversized, odd-looking modern bulk flooding the market.
+        not oversized modern bulk.
       </p>
       <div class="hero-meta">
         <span><b>Goal</b> Pet · companion · guardian</span>
@@ -425,45 +850,43 @@
   </div>
 
   <main>
-    <!-- WHY -->
     <section class="ch" id="why">
       <div class="wrap">
         <p class="label">01 — The problem</p>
         <h2 class="d">People started breeding them weird</h2>
         <p class="lede">
           Bigger heads. Heavier bone. Shorter muzzles. More bulk, less athlete.
-          If you want the old dog, you have to shop on purpose.
+          If you want the old dog, shop on purpose.
         </p>
 
-        <div class="prose read">
+        <div class="prose">
           <p class="drop">
             Search “Rottweiler puppy” long enough and the feed fills with dogs that barely
-            resemble the breed’s working roots. Some are genuinely impressive animals.
-            Many are simply oversized, overdone, or selected for a look that photographs tough
-            and ages poorly.
+            resemble the breed’s working roots. Some are impressive. Many are oversized,
+            overdone, or selected for a look that photographs tough and ages poorly.
           </p>
           <p>
             The original Rottweiler was a German drover and butcher’s dog: compact, powerful,
             mobile, and steady. Strong enough to work. Balanced enough to live with.
-            Serious enough to guard a home without needing a cartoon skull or 160 pounds of mass.
+            Serious enough to guard a home without needing a cartoon skull.
           </p>
           <p>
             This guide is for buyers who want that older idea of the dog as a
-            <strong>family companion and natural guardian</strong> — with real obedience training —
-            and who are willing to ignore the giant-American pet-mill aesthetic.
+            <strong>family companion and natural guardian</strong>, with real obedience training,
+            and who are willing to ignore giant pet-mill aesthetics.
           </p>
         </div>
 
-        <div class="pull">Compact power. Clean head. Calm nerves. German selection pressure.</div>
+        <div class="pull">Compact power. Clean head. Calm nerves.</div>
 
         <div class="spread duo">
           <figure class="shot wide">
-            <img src="assets/images/03-profile.jpg" alt="Rottweiler head in profile with full proportional muzzle" />
-            <figcaption>Proportional muzzle and strong stop — not a smashed face. <span>Wikimedia Commons</span></figcaption>
+            <img src="assets/images/profile.jpg" alt="Rottweiler head in profile with full proportional muzzle" width="1600" height="1062" loading="lazy" />
+            <figcaption>Proportional muzzle — not a smashed face.</figcaption>
           </figure>
-          <figure class="shot tall">
-            <img src="assets/images/05-calm.jpg" alt="Calm adult Rottweiler resting" />
-            <figcaption>Guardian temperament usually reads calm before it reads loud. <span>Wikimedia Commons</span></figcaption>
+          <figure class="shot portrait">
+            <img src="assets/images/face.jpg" alt="Front portrait of a Rottweiler head" width="481" height="516" loading="lazy" />
+            <figcaption>Width with balance. Dark eye, clean expression.</figcaption>
           </figure>
         </div>
 
@@ -476,13 +899,13 @@
               <li>Strong but proportional head</li>
               <li>Confident family companion temperament</li>
               <li>Natural guarding with an off-switch</li>
-              <li>Health testing you can actually verify</li>
+              <li>Health testing you can verify</li>
             </ul>
           </article>
           <article class="panel avoid">
             <h3>What to walk away from</h3>
             <ul>
-              <li>“Giant” / mastiff-bone marketing as the main pitch</li>
+              <li>“Giant” / mastiff-bone as the main pitch</li>
               <li>Very short muzzles and extreme domed heads</li>
               <li>Always-available litters and next-day shipping</li>
               <li>No public hip, elbow, or JLPP results</li>
@@ -494,7 +917,6 @@
       </div>
     </section>
 
-    <!-- LOOK -->
     <section class="ch" id="look">
       <div class="wrap">
         <p class="label">02 — Type</p>
@@ -512,93 +934,83 @@
               <div class="sil o"><div class="b"></div><span>Upper<br>standard</span></div>
               <div class="sil w"><div class="b"></div><span>Commercial<br>bulk</span></div>
             </div>
-            <p style="margin:0;font-size:.82rem;color:rgba(243,238,229,.55);">
-              Males are generally in the mid-20-inch range. The goal is correct proportion and movement — not novelty giantism.
+            <p style="margin:0;font-size:.8rem;color:rgba(243,238,229,.55);">
+              Males are generally in the mid-20-inch range. Aim for proportion and movement — not novelty giantism.
             </p>
           </div>
           <div class="notes">
-            <div class="note"><b>Build</b><span>Compact and powerful, with endurance. Slightly longer than tall. Should look like it can trot for work, not just pose.</span></div>
-            <div class="note"><b>Head</b><span>Broad and serious, but balanced. Full muzzle. Dark eyes. No brachy shortcut, no cartoon skull.</span></div>
-            <div class="note"><b>Mind</b><span>Calm confidence. Aloof with strangers. Soft with family. Courage without hysteria.</span></div>
-            <div class="note"><b>Proof</b><span>Traceable pedigree, verifiable health, and preferably some temperament or working filter in the lines.</span></div>
+            <div class="note"><b>Build</b><span>Compact and powerful, with endurance. Slightly longer than tall.</span></div>
+            <div class="note"><b>Head</b><span>Broad and serious, but balanced. Full muzzle. Dark eyes.</span></div>
+            <div class="note"><b>Mind</b><span>Calm confidence. Aloof with strangers. Soft with family.</span></div>
+            <div class="note"><b>Proof</b><span>Traceable pedigree, verifiable health, temperament filter in the lines.</span></div>
           </div>
         </div>
 
-        <div class="table-shell">
-          <table>
-            <thead>
-              <tr><th>Piece</th><th>Target</th><th>Red flag</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Male height</strong></td>
-                <td>Roughly 24–27 in. German standards treat the mid-range large dog as correct — not endless upward creep.</td>
-                <td class="bad">Sold mainly as enormous / “XXL guardian.”</td>
-              </tr>
-              <tr>
-                <td><strong>Condition</strong></td>
-                <td>Hard, athletic, substantial without being a brick.</td>
-                <td class="bad">Soft bulk, loose skin, no movement video.</td>
-              </tr>
-              <tr>
-                <td><strong>Head type</strong></td>
-                <td>Strong and proportional. Muzzle has real length and fill.</td>
-                <td class="bad">Short face, extreme stop, overdone wrinkle.</td>
-              </tr>
-              <tr>
-                <td><strong>Selection culture</strong></td>
-                <td>ADRK / FCI / serious European-influenced programs.</td>
-                <td class="bad">“German lines” with no papers and no tests.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="spec-list">
+          <article class="spec-card">
+            <h4>Male height</h4>
+            <p><span class="ok">Target:</span> Roughly 24–27 in. German standards treat the correct large dog as mid-range — not endless upward creep.</p>
+            <span class="warn-label">Red flag: sold mainly as enormous / “XXL guardian.”</span>
+          </article>
+          <article class="spec-card">
+            <h4>Condition</h4>
+            <p><span class="ok">Target:</span> Hard, athletic, substantial without being a brick.</p>
+            <span class="warn-label">Red flag: soft bulk, no movement video.</span>
+          </article>
+          <article class="spec-card">
+            <h4>Head type</h4>
+            <p><span class="ok">Target:</span> Strong and proportional. Muzzle has real length and fill.</p>
+            <span class="warn-label">Red flag: short face, extreme stop, overdone wrinkle.</span>
+          </article>
+          <article class="spec-card">
+            <h4>Selection culture</h4>
+            <p><span class="ok">Target:</span> ADRK / FCI / serious European-influenced programs.</p>
+            <span class="warn-label">Red flag: “German lines” with no papers and no tests.</span>
+          </article>
         </div>
 
         <div class="spread trio">
           <figure class="shot">
-            <img src="assets/images/07-work.jpg" alt="Rottweiler in a working context" />
-            <figcaption>Origin: work first. <span>Wikimedia</span></figcaption>
+            <img src="assets/images/work.jpg" alt="Rottweiler in a working context" width="1280" height="1024" loading="lazy" />
+            <figcaption>Origin: work first.</figcaption>
           </figure>
           <figure class="shot">
-            <img src="assets/images/06-move.jpg" alt="Athletic Rottweiler in motion" />
-            <figcaption>If it can’t move, it isn’t the old dog. <span>Wikimedia</span></figcaption>
+            <img src="assets/images/move.jpg" alt="Athletic Rottweiler in motion" width="1319" height="839" loading="lazy" />
+            <figcaption>If it can’t move, it isn’t the old dog.</figcaption>
           </figure>
           <figure class="shot">
-            <img src="assets/images/09-show.jpg" alt="Rottweiler in a show setting" />
-            <figcaption>Structure under judgment still trains the eye. <span>Wikimedia</span></figcaption>
+            <img src="assets/images/show.jpg" alt="Rottweiler in a show setting" width="1600" height="1200" loading="lazy" />
+            <figcaption>Structure under judgment still trains the eye.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- PAPERS -->
     <section class="ch" id="papers">
       <div class="wrap">
         <p class="label">03 — Language of the breed</p>
         <h2 class="d">How to read papers without getting sold</h2>
-        <p class="lede">
-          Titles and clearances are a map. Adjectives on a sales page are weather.
-        </p>
+        <p class="lede">Titles and clearances are a map. Sales-page adjectives are weather.</p>
 
         <div class="terms">
           <div class="term"><div class="cat">Health</div><code>HD-A / HD-Frei</code><p>German hips clear. US parallel: OFA Excellent / Good.</p></div>
           <div class="term"><div class="cat">Health</div><code>ED-0 / ED-Frei</code><p>Elbows clear. US: OFA Normal elbows.</p></div>
-          <div class="term"><div class="cat">Health</div><code>JLPP N/N</code><p>DNA clear for a known Rottweiler neurological risk. Prefer clear parents.</p></div>
-          <div class="term"><div class="cat">Breed test</div><code>ZTP</code><p>German breed suitability evaluation — structure, type, temperament, drive.</p></div>
-          <div class="term"><div class="cat">US parallel</div><code>BST</code><p>USRC Breed Suitability Test — conformation plus character elements.</p></div>
-          <div class="term"><div class="cat">Work</div><code>BH</code><p>Basic temperament and obedience bar. A useful minimum signal in serious lines.</p></div>
-          <div class="term"><div class="cat">Work</div><code>IGP I–III</code><p>Real sport titles. Fine in parents; pure sport intensity may be more dog than a pet home wants.</p></div>
-          <div class="term"><div class="cat">Show</div><code>KS / V1</code><p>Klubsieger = major ADRK specialty winner. V1 = Excellent, first in class under FCI-style judging.</p></div>
+          <div class="term"><div class="cat">Health</div><code>JLPP N/N</code><p>DNA clear for a known Rottweiler neurological risk.</p></div>
+          <div class="term"><div class="cat">Breed test</div><code>ZTP</code><p>German breed suitability — structure, type, temperament, drive.</p></div>
+          <div class="term"><div class="cat">US parallel</div><code>BST</code><p>USRC Breed Suitability Test — conformation plus character.</p></div>
+          <div class="term"><div class="cat">Work</div><code>BH</code><p>Basic temperament and obedience bar. A useful minimum signal.</p></div>
+          <div class="term"><div class="cat">Work</div><code>IGP I–III</code><p>Real sport titles. Fine on parents; pure sport intensity may be more dog than a pet home wants.</p></div>
+          <div class="term"><div class="cat">Show</div><code>KS / V1</code><p>Klubsieger = major ADRK specialty winner. V1 = Excellent, first in class.</p></div>
           <div class="term"><div class="cat">Papers</div><code>Ahnentafel</code><p>Official ADRK pedigree. Often carries titles and health notations.</p></div>
-          <div class="term"><div class="cat">Club</div><code>ADRK</code><p>German parent club. Still the home-court standard for the breed.</p></div>
-          <div class="term"><div class="cat">Club</div><code>USRC</code><p>US club culturally closer to FCI/ADRK thinking than pure pet-show shopping.</p></div>
+          <div class="term"><div class="cat">Club</div><code>ADRK</code><p>German parent club. Home-court standard for the breed.</p></div>
+          <div class="term"><div class="cat">Club</div><code>USRC</code><p>US club closer to FCI/ADRK thinking than pure pet-show shopping.</p></div>
           <div class="term"><div class="cat">US health</div><code>OFA</code><p>Public database for hips, elbows, and more. If they claim it, look it up.</p></div>
         </div>
 
         <div class="ask">
-          <h3>Parent profile that fits a companion-guardian home</h3>
+          <h3>Parent profile for a companion-guardian home</h3>
           <ol>
-            <li><strong>Green:</strong> German or clear European pedigree · hips/elbows passed · JLPP clear · BH or breed test preferred · breeder places family homes and talks temperament matching.</li>
+            <li><strong>Green:</strong> German or clear European pedigree · hips/elbows passed · JLPP clear · BH or breed test preferred · family-home placements.</li>
             <li><strong>Yellow:</strong> Only protection marketing, “giant head / massive bone” as the pitch, health screenshots with no registry links.</li>
             <li><strong>Red:</strong> Always in stock, deposit before conversation, no adult movement video, no references.</li>
           </ol>
@@ -606,35 +1018,40 @@
       </div>
     </section>
 
-    <!-- BREEDERS -->
     <section class="ch" id="breeders">
       <div class="wrap">
         <p class="label">04 — Where to start looking</p>
         <h2 class="d">Programs worth researching</h2>
         <p class="lede">
-          Not a purchase order. A shortlist of German-type oriented programs with public websites you can study yourself.
+          Not a purchase order. A shortlist with public sites you can study yourself.
           Adults first. Papers second. Puppies last.
         </p>
 
         <div class="club-row">
           <article class="club">
-            <img src="assets/breeders/adrk-home.png" alt="Screenshot of ADRK German Rottweiler club website" />
+            <div class="club-shot">
+              <img src="assets/breeders/adrk-home.png" alt="ADRK website screenshot" loading="lazy" />
+            </div>
             <div class="pad">
               <h3>ADRK — Germany</h3>
-              <p>Home club for the breed. Use the breeder directory when you want the purest paper trail and are open to import logistics.</p>
-              <a href="https://adrk.de/index.php/en/home" target="_blank" rel="noopener">adrk.de</a>
-              ·
-              <a href="https://adrk.de/index.php/en/home-en/zuechter/zuechterverzeichnis/108-zuechter-deutschland" target="_blank" rel="noopener">Breeder directory</a>
+              <p>Home club for the breed. Use the breeder directory when you want the cleanest paper trail and can handle import logistics.</p>
+              <div class="links">
+                <a href="https://adrk.de/index.php/en/home" target="_blank" rel="noopener">adrk.de</a>
+                <a href="https://adrk.de/index.php/en/home-en/zuechter/zuechterverzeichnis/108-zuechter-deutschland" target="_blank" rel="noopener">Breeder directory</a>
+              </div>
             </div>
           </article>
           <article class="club">
-            <img src="assets/breeders/usrc-home.png" alt="Screenshot of United States Rottweiler Club website" />
+            <div class="club-shot">
+              <img src="assets/breeders/usrc-home.png" alt="USRC website screenshot" loading="lazy" />
+            </div>
             <div class="pad">
               <h3>USRC — United States</h3>
-              <p>FCI/ADRK-minded US club culture: breed suitability testing, working events, and better referrals than random Facebook litters.</p>
-              <a href="https://www.usrconline.org/" target="_blank" rel="noopener">usrconline.org</a>
-              ·
-              <a href="http://www.usrconline.org/usrc_clubs.html" target="_blank" rel="noopener">Member clubs</a>
+              <p>FCI/ADRK-minded US club culture: breed suitability testing, working events, better referrals than random Facebook litters.</p>
+              <div class="links">
+                <a href="https://www.usrconline.org/" target="_blank" rel="noopener">usrconline.org</a>
+                <a href="http://www.usrconline.org/usrc_clubs.html" target="_blank" rel="noopener">Member clubs</a>
+              </div>
             </div>
           </article>
         </div>
@@ -643,7 +1060,7 @@
           <article class="breeder">
             <div class="breeder-shot">
               <span class="rank-pill">Start here · 01</span>
-              <img src="assets/breeders/dreibergen-home.png" alt="Dreibergen Rottweilers website screenshot" />
+              <img src="assets/breeders/dreibergen-home.png" alt="Dreibergen website" loading="lazy" />
             </div>
             <div class="breeder-body">
               <h3>Dreibergen Rottweilers</h3>
@@ -654,7 +1071,7 @@
                 <span class="tag good">Health suite</span>
                 <span class="tag">Hobby volume</span>
               </div>
-              <p>One of the cleaner public examples of FCI-minded breeding language: imports, titles, OFA package, companions as well as work/show, natural tails, education-heavy site. Expect a waitlist.</p>
+              <p>Clean public example of FCI-minded breeding language: imports, titles, OFA package, companions as well as work/show, natural tails. Expect a waitlist.</p>
               <div class="links">
                 <a href="https://www.4rottweilers.com/" target="_blank" rel="noopener">Website</a>
                 <a href="https://www.4rottweilers.com/puppies.htm" target="_blank" rel="noopener">Puppies</a>
@@ -667,7 +1084,7 @@
           <article class="breeder">
             <div class="breeder-shot">
               <span class="rank-pill">Start here · 02</span>
-              <img src="assets/breeders/oldworld-home.png" alt="Old World Kennel website screenshot" />
+              <img src="assets/breeders/oldworld-home.png" alt="Old World Kennel website" loading="lazy" />
             </div>
             <div class="breeder-body">
               <h3>Old World Kennel</h3>
@@ -677,7 +1094,7 @@
                 <span class="tag good">German partner kennel</span>
                 <span class="tag good">Long import history</span>
               </div>
-              <p>Long-running German import program with an ADRK partner kennel relationship. Study the males/females pages and ask specifically about companion placements if you are not buying a sport prospect.</p>
+              <p>Long-running German import program with an ADRK partner kennel relationship. Study adults and ask specifically about companion placements.</p>
               <div class="links">
                 <a href="https://www.oldworldkennel.com/" target="_blank" rel="noopener">Website</a>
                 <a href="https://www.oldworldkennel.com/males/" target="_blank" rel="noopener">Males</a>
@@ -690,7 +1107,7 @@
           <article class="breeder">
             <div class="breeder-shot">
               <span class="rank-pill">Start here · 03</span>
-              <img src="assets/breeders/lonecreek-home.png" alt="Lonecreek Rottweilers website screenshot" />
+              <img src="assets/breeders/lonecreek-home.png" alt="Lonecreek website" loading="lazy" />
             </div>
             <div class="breeder-body">
               <h3>Lonecreek Rottweilers</h3>
@@ -700,7 +1117,7 @@
                 <span class="tag">Working + show</span>
                 <span class="tag warn">Type-check adults</span>
               </div>
-              <p>Useful if you want a more reachable US program with German-line positioning. Still judge the living adults for compact type — regional markets often drift heavier.</p>
+              <p>Reachable US program with German-line positioning. Still judge living adults for compact type — regional markets often drift heavier.</p>
               <div class="links">
                 <a href="https://lonecreekrottweilers.com/" target="_blank" rel="noopener">Website</a>
                 <a href="https://lonecreekrottweilers.com/german-rottweilers-our-dogs/" target="_blank" rel="noopener">Dogs</a>
@@ -712,7 +1129,7 @@
           <article class="breeder">
             <div class="breeder-shot">
               <span class="rank-pill t2">Also research · 04</span>
-              <img src="assets/breeders/aarup-home.png" alt="Vom Hause Aarup website screenshot" />
+              <img src="assets/breeders/aarup-home.png" alt="Vom Hause Aarup website" loading="lazy" />
             </div>
             <div class="breeder-body">
               <h3>Vom Hause Aarup</h3>
@@ -722,7 +1139,7 @@
                 <span class="tag good">OFA + JLPP stated</span>
                 <span class="tag warn">Confirm structure live</span>
               </div>
-              <p>Smaller public footprint with import-line and health-testing language. Use adult photos/video hard before trusting the brochure.</p>
+              <p>Smaller public footprint with import-line and health-testing language. Use adult photos and video hard before trusting the brochure.</p>
               <div class="caveat"><strong>Buyer note:</strong> demand parent clearance links and movement video.</div>
               <div class="links">
                 <a href="https://vomhauseaaruprottweilers.com/" target="_blank" rel="noopener">Website</a>
@@ -735,7 +1152,7 @@
           <article class="breeder">
             <div class="breeder-shot">
               <span class="rank-pill t2">Also research · 05</span>
-              <img src="assets/breeders/warterr-home.png" alt="Von Warterr Rottweilers website screenshot" />
+              <img src="assets/breeders/warterr-home.png" alt="Von Warterr website" loading="lazy" />
             </div>
             <div class="breeder-body">
               <h3>Von Warterr</h3>
@@ -745,8 +1162,8 @@
                 <span class="tag">Photo-rich</span>
                 <span class="tag warn">Can run heavy</span>
               </div>
-              <p>Established European/German pedigree program with lots of public imagery and guardian positioning. Only stay interested if the adults still look athletic rather than overdone.</p>
-              <div class="caveat"><strong>Buyer note:</strong> they dock tails; modern ADRK/FCI preference is natural tail.</div>
+              <p>Established European/German pedigree program with lots of public imagery. Stay interested only if adults still look athletic rather than overdone.</p>
+              <div class="caveat"><strong>Buyer note:</strong> docks tails; modern ADRK/FCI preference is natural tail.</div>
               <div class="links">
                 <a href="https://www.vonwarterr.net/" target="_blank" rel="noopener">Website</a>
                 <a href="https://www.vonwarterr.net/current-rottweiler-litters" target="_blank" rel="noopener">Litters</a>
@@ -757,7 +1174,7 @@
           <article class="breeder">
             <div class="breeder-shot">
               <span class="rank-pill t2">Also research · 06</span>
-              <img src="assets/breeders/hushon-home.png" alt="Vom Hause Hushon website screenshot" />
+              <img src="assets/breeders/hushon-home.png" alt="Vom Hause Hushon website" loading="lazy" />
             </div>
             <div class="breeder-body">
               <h3>Vom Hause Hushon</h3>
@@ -767,7 +1184,7 @@
                 <span class="tag good">ADRK dams listed</span>
                 <span class="tag warn">Check sire size/type</span>
               </div>
-              <p>Useful example of transparent health communication and European dam imports. Study the actual dogs carefully — open health pages do not automatically equal perfect type.</p>
+              <p>Useful example of transparent health communication and European dam imports. Open health pages still do not automatically equal perfect type.</p>
               <div class="links">
                 <a href="https://hushonrottweilers.com/" target="_blank" rel="noopener">Website</a>
                 <a href="https://hushonrottweilers.com/puppies" target="_blank" rel="noopener">Puppies</a>
@@ -778,45 +1195,42 @@
           </article>
         </div>
 
-        <div class="spread duo" style="margin-top:2rem;">
+        <div class="spread duo" style="margin-top:1.75rem;">
           <figure class="shot">
-            <img src="assets/images/04-face.jpg" alt="Front face of a classic Rottweiler" />
-            <figcaption>Front head study: width with balance. <span>Wikimedia</span></figcaption>
+            <img src="assets/images/stack.jpg" alt="Classic stacked Rottweiler" width="1000" height="760" loading="lazy" />
+            <figcaption>Study stacked adults before litter grids.</figcaption>
           </figure>
           <figure class="shot">
-            <img src="assets/images/08-pups.jpg" alt="Rottweiler puppies" />
-            <figcaption>Puppies come after you trust the adults. <span>Wikimedia</span></figcaption>
+            <img src="assets/images/pups.jpg" alt="Rottweiler puppies" width="1280" height="960" loading="lazy" />
+            <figcaption>Puppies come after you trust the adults.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- BUY -->
     <section class="ch" id="buy">
       <div class="wrap">
         <p class="label">05 — Process</p>
         <h2 class="d">How to buy without getting played</h2>
-        <p class="lede">
-          Slow is an advantage. Type is decided on adults, not on eight-week fluff.
-        </p>
+        <p class="lede">Slow is an advantage. Type is decided on adults, not eight-week fluff.</p>
 
         <ol class="steps">
           <li>
             <div>
               <strong>Build a type board</strong>
-              <span>Save side profiles, fronts, and movement clips of adults you like. Your eye gets sharper fast.</span>
+              <span>Save side profiles, fronts, and movement clips of adults you like.</span>
             </div>
           </li>
           <li>
             <div>
               <strong>Touch the network</strong>
-              <span>USRC events, serious training clubs, and import-minded breeders beat Facebook marketplace culture.</span>
+              <span>USRC events and import-minded breeders beat Facebook marketplace culture.</span>
             </div>
           </li>
           <li>
             <div>
               <strong>Study parents first</strong>
-              <span>Demand standing photos, movement video, pedigree, and health links for both sire and dam.</span>
+              <span>Standing photos, movement video, pedigree, and health links for both sire and dam.</span>
             </div>
           </li>
           <li>
@@ -827,8 +1241,8 @@
           </li>
           <li>
             <div>
-              <strong>Only then reserve a puppy — or buy a young adult</strong>
-              <span>Young adults often show temperament and structure more honestly than a crate of look-alike pups.</span>
+              <strong>Only then reserve — or buy a young adult</strong>
+              <span>Young adults often show temperament and structure more honestly.</span>
             </div>
           </li>
         </ol>
@@ -870,50 +1284,41 @@
       </div>
     </section>
 
-    <!-- SKIP -->
     <section class="ch" id="skip">
       <div class="wrap">
         <p class="label">06 — Hard passes</p>
         <h2 class="d">Skip these and save years</h2>
 
-        <div class="table-shell">
-          <table class="pass">
-            <thead>
-              <tr><th>Skip</th><th>Why</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Facebook “giant German” litters</td>
-                <td>Usually the bulk/type drift you are trying to escape, with thin paperwork.</td>
-              </tr>
-              <tr>
-                <td>“#1 USA / ship worldwide / deposit today”</td>
-                <td>Volume marketing over selection — even when the copy says “import bloodlines.”</td>
-              </tr>
-              <tr>
-                <td>No verifiable hips, elbows, or JLPP</td>
-                <td>Non-negotiable on this breed.</td>
-              </tr>
-              <tr>
-                <td>Rare colors or long coat as features</td>
-                <td>Wrong priorities for classic type.</td>
-              </tr>
-              <tr>
-                <td>Only pet papers, zero European/working story</td>
-                <td>Different selection culture than original German type.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="pass-list">
+          <article class="pass-card">
+            <h4>Facebook “giant German” litters</h4>
+            <p>Usually the bulk/type drift you are trying to escape, with thin paperwork.</p>
+          </article>
+          <article class="pass-card">
+            <h4>“#1 USA / ship worldwide / deposit today”</h4>
+            <p>Volume marketing over selection — even when the copy says “import bloodlines.”</p>
+          </article>
+          <article class="pass-card">
+            <h4>No verifiable hips, elbows, or JLPP</h4>
+            <p>Non-negotiable on this breed.</p>
+          </article>
+          <article class="pass-card">
+            <h4>Rare colors or long coat as features</h4>
+            <p>Wrong priorities for classic type.</p>
+          </article>
+          <article class="pass-card">
+            <h4>Only pet papers, zero European/working story</h4>
+            <p>Different selection culture than original German type.</p>
+          </article>
         </div>
 
-        <div class="full-bleed" style="margin-top:2.2rem;">
-          <img src="assets/images/02-stack-alt.jpg" alt="Classic Rottweiler stacked on grass" />
+        <div class="band-photo">
+          <img src="assets/images/stack.jpg" alt="Classic Rottweiler stacked on grass" width="1000" height="760" loading="lazy" />
         </div>
-        <figcaption style="margin-top:.55rem;">The whole point: a serious dog that still looks like itself. <span>Wikimedia Commons</span></figcaption>
+        <figcaption>The whole point: a serious dog that still looks like itself.</figcaption>
       </div>
     </section>
 
-    <!-- RESOURCES -->
     <section class="ch" id="resources">
       <div class="wrap">
         <p class="label">07 — Desk references</p>
@@ -944,8 +1349,7 @@
       <div>
         <strong>Imagery</strong><br />
         Dog photos from Wikimedia Commons under their respective licenses.
-        Breeder and club images are fair-use editorial screenshots of public websites for identification and research navigation.
-        Local copies live under <code>assets/</code>.
+        Club and breeder images are editorial screenshots of public websites for research navigation.
       </div>
     </div>
   </footer>
