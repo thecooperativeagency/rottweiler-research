@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Rottweiler Research — Lance</title>
+  <meta name="description" content="Personal research brief: original German-type Rottweiler for family guardian/companion. Standards, decoder, shortlist, shopping plan from Baton Rouge." />
+  <meta name="theme-color" content="#1a1612" />
+  <style>
+    :root {
+      --bg: #14110e;
+      --bg-elev: #1c1814;
+      --bg-card: #221d18;
+      --ink: #f3ebe1;
+      --muted: #b5a898;
+      --faint: #7d7266;
+      --line: rgba(243, 235, 225, 0.12);
+      --accent: #c45c26;
+      --accent-soft: rgba(196, 92, 38, 0.16);
+      --good: #6f9f6a;
+      --warn: #c9a227;
+      --bad: #c45c5c;
+      --tier1: #6f9f6a;
+      --tier2: #c9a227;
+      --pass: #c45c5c;
+      --radius: 14px;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      --max: 1080px;
+      --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(196, 92, 38, 0.14), transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, rgba(111, 159, 106, 0.08), transparent 50%),
+        var(--bg);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    a { color: #e8a06a; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #ffc089; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    /* Top bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(20, 17, 14, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      min-width: 0;
+    }
+    .brand strong {
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+    .brand span {
+      color: var(--faint);
+      font-size: 0.75rem;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+      justify-content: flex-end;
+    }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav a:hover {
+      color: var(--ink);
+      border-color: var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* Hero */
+    header.hero {
+      padding: 2.4rem 0 1.5rem;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 1.4rem;
+      height: 2px;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.12;
+      margin: 0 0 0.9rem;
+      text-wrap: pretty;
+      max-width: 16ch;
+    }
+    .lede {
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 1.4rem;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .chip b { color: var(--ink); font-weight: 600; }
+
+    /* Sections */
+    section {
+      padding: 1.75rem 0 0.5rem;
+      scroll-margin-top: 4.5rem;
+    }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--line);
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+      margin: 0;
+      font-weight: 600;
+    }
+    .section-note {
+      color: var(--faint);
+      font-size: 0.8rem;
+      text-align: right;
+      max-width: 28ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+    }
+    @media (max-width: 820px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .section-note { text-align: left; max-width: none; }
+      .nav { display: none; }
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.025), transparent 40%), var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.15rem;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+    }
+    .card p, .card li { color: var(--muted); }
+    .card p:last-child { margin-bottom: 0; }
+
+    .want-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .want-grid { grid-template-columns: 1fr; }
+    }
+    .want { border-left: 3px solid var(--good); }
+    .avoid { border-left: 3px solid var(--bad); }
+    .want h3 { color: var(--good); }
+    .avoid h3 { color: #e08a8a; }
+
+    ul.clean {
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+    }
+    ul.clean li { margin: 0.28rem 0; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-card);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      color: var(--faint);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      background: rgba(0,0,0,0.2);
+    }
+    tr:last-child td { border-bottom: 0; }
+    td strong { color: var(--ink); font-weight: 600; }
+    td .sub { display: block; color: var(--faint); font-size: 0.8rem; margin-top: 0.2rem; }
+
+    /* Decoder */
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 900px) {
+      .term-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .term-grid { grid-template-columns: 1fr; }
+    }
+    .term {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.9rem 0.95rem;
+    }
+    .term code {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.12rem 0.4rem;
+      border-radius: 6px;
+    }
+    .term p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .term .cat {
+      display: block;
+      color: var(--faint);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.35rem;
+    }
+
+    /* Breeder cards */
+    .breeder-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+    .breeder {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    @media (max-width: 640px) {
+      .breeder { grid-template-columns: 1fr; }
+    }
+    .rank {
+      width: 88px;
+      height: 88px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.25);
+    }
+    .rank.t1 { color: var(--tier1); box-shadow: inset 0 0 0 1px rgba(111,159,106,0.25); }
+    .rank.t2 { color: var(--tier2); box-shadow: inset 0 0 0 1px rgba(201,162,39,0.25); }
+    .breeder-body h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.12rem;
+    }
+    .breeder-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.45rem 0 0.7rem;
+    }
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .tag.good { color: #b7d6b3; border-color: rgba(111,159,106,0.35); background: rgba(111,159,106,0.1); }
+    .tag.warn { color: #e6d08a; border-color: rgba(201,162,39,0.35); background: rgba(201,162,39,0.1); }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.85rem;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .caveat {
+      margin-top: 0.65rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 10px;
+      background: rgba(201, 162, 39, 0.08);
+      border: 1px solid rgba(201, 162, 39, 0.22);
+      color: #e2d2a0;
+      font-size: 0.88rem;
+    }
+
+    /* Checklist */
+    .check-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.45rem;
+    }
+    .check-list li {
+      display: grid;
+      grid-template-columns: 1.4rem 1fr;
+      gap: 0.55rem;
+      align-items: start;
+      color: var(--muted);
+      padding: 0.55rem 0.65rem;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid transparent;
+    }
+    .check-list li:hover { border-color: var(--line); }
+    .box {
+      width: 1.15rem;
+      height: 1.15rem;
+      border: 1.5px solid var(--faint);
+      border-radius: 4px;
+      margin-top: 0.15rem;
+    }
+
+    /* Email */
+    pre.email {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: #e8dfd3;
+      background: #0f0d0b;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.05rem;
+    }
+    .copy-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.55rem;
+    }
+    button.copy {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    button.copy:hover { border-color: rgba(255,255,255,0.25); }
+    button.copy.ok { border-color: rgba(111,159,106,0.5); color: #b7d6b3; }
+
+    /* Plan steps */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.7rem;
+    }
+    .steps li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 2.2rem 1fr;
+      gap: 0.75rem;
+      align-items: start;
+    }
+    .steps li::before {
+      content: counter(step);
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: #ffb07a;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid rgba(196, 92, 38, 0.35);
+    }
+    .steps strong { color: var(--ink); display: block; margin-bottom: 0.15rem; }
+    .steps span { color: var(--muted); font-size: 0.92rem; }
+
+    /* Pass table accents */
+    .pass-row td:first-child { color: #e08a8a; font-weight: 600; }
+
+    footer {
+      margin: 2.5rem 0 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      color: var(--faint);
+      font-size: 0.82rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .callout {
+      border: 1px solid rgba(196, 92, 38, 0.35);
+      background: linear-gradient(135deg, rgba(196, 92, 38, 0.12), rgba(196, 92, 38, 0.03));
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    .callout strong { color: #ffb07a; }
+
+    .muted { color: var(--muted); }
+    .small { font-size: 0.86rem; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <strong>German Rottweiler Research</strong>
+        <span>Personal brief · family guardian · BR base</span>
+      </div>
+      <nav class="nav" aria-label="Sections">
+        <a href="#brief">Brief</a>
+        <a href="#type">Type</a>
+        <a href="#decoder">Decoder</a>
+        <a href="#shortlist">Shortlist</a>
+        <a href="#plan">Plan</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#email">Email</a>
+        <a href="#passes">Passes</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero wrap">
+    <div class="eyebrow">Research mini-site</div>
+    <h1>Original German type. Family guardian.</h1>
+    <p class="lede">
+      Compact, athletic, pure German / ADRK-minded bloodlines — not oversized “modern”
+      mastiff-ish pets. Companion + natural guardian, with serious obedience. Base: Baton Rouge.
+      Horizon: next couple of years.
+    </p>
+    <div class="meta-row">
+      <span class="chip"><b>Use</b> Family guardian / companion</span>
+      <span class="chip"><b>Training</b> Obedience (not IGP sport dog)</span>
+      <span class="chip"><b>Type</b> Classic German working</span>
+      <span class="chip"><b>Base</b> Baton Rouge, LA</span>
+    </div>
+    <div class="callout">
+      <strong>How to use this page:</strong>
+      Adults first, puppies second. Verify OFA / HD-ED + JLPP yourself.
+      This is a research map, not a purchase order. Programs listed were web-vetted only.
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- BRIEF -->
+    <section id="brief">
+      <div class="section-head">
+        <h2>What you want</h2>
+        <div class="section-note">Locked from our brief</div>
+      </div>
+      <div class="want-grid">
+        <article class="card want">
+          <h3>Want</h3>
+          <ul class="clean">
+            <li>Pure / documented German bloodlines (ADRK / FCI culture)</li>
+            <li>Original look: compact, powerful, athletic drover dog</li>
+            <li>Calm, confident family guardian + companion</li>
+            <li>Trainable for real obedience</li>
+            <li>Natural guarding instinct with an off-switch</li>
+            <li>Parents with public health clearances</li>
+          </ul>
+        </article>
+        <article class="card avoid">
+          <h3>Avoid</h3>
+          <ul class="clean">
+            <li>Oversized “giant” / mastiff-bone commercial type</li>
+            <li>Short-muzzled, domed “pugweiler” heads</li>
+            <li>High-drive IGP-only litters with no house manners story</li>
+            <li>No hips/elbows/JLPP you can verify</li>
+            <li>“Always available / ship tomorrow / $500 hold” mills</li>
+            <li>Rare color / long coat / blue marketing</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- TYPE -->
+    <section id="type">
+      <div class="section-head">
+        <h2>Original type targets</h2>
+        <div class="section-note">ADRK / FCI posture</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Piece</th>
+              <th>Target</th>
+              <th>Red flag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Male height</strong></td>
+              <td>~24–27 in (61–68 cm). ADRK “correct large” often ~65–66 cm.</td>
+              <td>Sold as enormous novelty; structure sacrificed for bulk.</td>
+            </tr>
+            <tr>
+              <td><strong>Male weight feel</strong></td>
+              <td>Powerful but mobile — often ~100–120 lb class when fit, not a brick.</td>
+              <td>Regular 140–180 lb “guardian” marketing.</td>
+            </tr>
+            <tr>
+              <td><strong>Build</strong></td>
+              <td>Compact, strong, endurance + power. Longer than tall slightly.</td>
+              <td>Loose skin, barrel chest, draft-horse bone only.</td>
+            </tr>
+            <tr>
+              <td><strong>Head</strong></td>
+              <td>Strong, proportional muzzle. Dark eyes/pigment. Serious expression.</td>
+              <td>Smashed face, extreme stop, overdone cheek/skull.</td>
+            </tr>
+            <tr>
+              <td><strong>Mind</strong></td>
+              <td>Calm, confident, biddable. Aloof with strangers, solid with family.</td>
+              <td>Soft/shy, or hair-trigger “protection prospect” hype.</td>
+            </tr>
+            <tr>
+              <td><strong>Proof</strong></td>
+              <td>German papers / clear pedigree + health + BH or breed suitability preferred.</td>
+              <td>“German lines” with no Ahnentafel / no titles / no clearances.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted small" style="margin-top:0.85rem;">
+        AKC size band is similar on paper; culture and selection pressure differ.
+        ADRK still polices breeding suitability hardest. USRC in the US tracks FCI/ADRK approach (BST, work + type).
+      </p>
+    </section>
+
+    <!-- DECODER -->
+    <section id="decoder">
+      <div class="section-head">
+        <h2>Pedigree & health decoder</h2>
+        <div class="section-note">Read papers without getting sold</div>
+      </div>
+      <div class="term-grid">
+        <div class="term">
+          <span class="cat">Health</span>
+          <code>HD-A / HD-Frei</code>
+          <p>German hips clear (best). US parallel: OFA Excellent/Good.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Health</span>
+          <code>ED-0 / ED-Frei</code>
+          <p>Elbows clear. US: OFA Normal elbows.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Health</span>
+          <code>JLPP N/N</code>
+          <p>DNA clear. Also watch LEMP / NAD on modern stock. Avoid untested parents.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Breed worthiness</span>
+          <code>ZTP</code>
+          <p>German breed suitability test — structure, type, temperament, drive.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Breed worthiness</span>
+          <code>Zucht- u. Körfähig</code>
+          <p>Top German breeding clearance stamp on the Ahnentafel.</p>
+        </div>
+        <div class="term">
+          <span class="cat">US parallel</span>
+          <code>BST</code>
+          <p>USRC Breed Suitability Test — conformation + character/courage elements.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Work</span>
+          <code>BH</code>
+          <p>Basic temperament + obedience bar. Minimum signal for serious lines.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Work</span>
+          <code>IGP I–III</code>
+          <p>Real sport titles (old IPO/SchH). Fine in parents; III-only litters may be too hot for house companion.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Show (German)</span>
+          <code>KS / V1</code>
+          <p>Klubsieger = ADRK national specialty winner. V1 = Excellent, first in class.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Papers</span>
+          <code>Ahnentafel</code>
+          <p>Official ADRK pedigree. Titles + health often printed on it.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Clubs</span>
+          <code>ADRK</code>
+          <p>German parent club — gold standard for breed rules and directory of German breeders.</p>
+        </div>
+        <div class="term">
+          <span class="cat">Clubs</span>
+          <code>USRC</code>
+          <p>US club aligned with FCI/ADRK culture. Events, BST, member referrals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDEAL PARENT -->
+    <section id="parent-profile">
+      <div class="section-head">
+        <h2>Ideal parent profile (for your use)</h2>
+        <div class="section-note">Companion-first selection</div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Green lights</h3>
+          <ul class="clean">
+            <li>German import or clear German / ADRK pedigree</li>
+            <li>HD-A or OFA Good/Excellent; elbows free/Normal</li>
+            <li>JLPP N/N both sides (or clear × carrier managed correctly — prefer clear)</li>
+            <li>BH minimum; optional light IGP I / ZTP / BST</li>
+            <li>Breeder places mostly family homes and matches temperament</li>
+            <li>Adult dogs look athletic and proportional in unedited photos/video</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Yellow / red</h3>
+          <ul class="clean">
+            <li>Only IGP III protection marketing, no off-switch story</li>
+            <li>“Huge head / giant bone” as the selling point</li>
+            <li>Health claims without OFA links or German certs</li>
+            <li>Puppies always in stock, deposit before conversation</li>
+            <li>Cannot name recent family homes or share references</li>
+          </ul>
+          <p class="small muted" style="margin-top:0.8rem;">
+            You’re not rejecting working blood. You’re rejecting sport-specialist intensity and commercial size drift.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SHORTLIST -->
+    <section id="shortlist">
+      <div class="section-head">
+        <h2>Breeder shortlist</h2>
+        <div class="section-note">Start-here list · verify yourself</div>
+      </div>
+
+      <p class="muted" style="margin:0 0 1rem;">
+        Ranked for <b style="color:var(--ink)">your</b> brief (BR + family companion + classic German type), not “best kennel on earth.”
+        Web diligence only — no kennel visits yet.
+      </p>
+
+      <h3 style="margin:0 0 0.75rem;font-size:0.85rem;color:var(--tier1);letter-spacing:0.06em;text-transform:uppercase;">Tier 1</h3>
+      <div class="breeder-list" style="margin-bottom:1.4rem;">
+        <article class="card breeder">
+          <div class="rank t1">1</div>
+          <div class="breeder-body">
+            <h3>Dreibergen Rottweilers</h3>
+            <div class="breeder-meta">
+              <span class="tag good">USRC + ADRK</span>
+              <span class="tag good">German imports</span>
+              <span class="tag good">FCI standard</span>
+              <span class="tag">Hobby volume / waitlist</span>
+              <span class="tag warn">Pacific NW · fly</span>
+            </div>
+            <p class="muted" style="margin:0;">
+              Strongest culture match: German imports / first-gen, titles + full health suite, companions as well as work/show, natural tails, education-first site.
+            </p>
+            <div class="links">
+              <a href="https://www.4rottweilers.com/" target="_blank" rel="noopener">Website</a>
+              <a href="https://www.4rottweilers.com/puppies.htm" target="_blank" rel="noopener">Puppies</a>
+              <a href="https://www.4rottweilers.com/males.htm" target="_blank" rel="noopener">Males</a>
+              <a href="https://www.4rottweilers.com/females.htm" target="_blank" rel="noopener">Females</a>
+              <a href="https://www.facebook.com/dreibergen.rottweilers/" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card breeder">
+          <div class="rank t1">2</div>
+          <div class="breeder-body">
+            <h3>Old World Kennel — Cumberland Cove, TN</h3>
+            <div class="breeder-meta">
+              <span class="tag good">ADRK member</span>
+              <span class="tag good">German partner kennel</span>
+              <span class="tag good">Long import history</span>
+              <span class="tag">Closer than West Coast</span>
+            </div>
+            <p class="muted" style="margin:0;">
+              Since 1981; German names/titles on males; partner ADRK kennel von der Alten Welt. Ask explicitly for family-companion matching, not only sport prospect.
+            </p>
+            <div class="links">
+              <a href="https://www.oldworldkennel.com/" target="_blank" rel="noopener">Website</a>
+              <a href="https://www.oldworldkennel.com/males/" target="_blank" rel="noopener">Males</a>
+              <a href="https://www.oldworldkennel.com/females/" target="_blank" rel="noopener">Females</a>
+              <a href="https://www.oldworldkennel.com/puppies/" target="_blank" rel="noopener">Puppies</a>
+              <a href="mailto:info@oldworldkennel.com">info@oldworldkennel.com</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card breeder">
+          <div class="rank t1">3</div>
+          <div class="breeder-body">
+            <h3>Lonecreek Rottweilers — Bedias, TX</h3>
+            <div class="breeder-meta">
+              <span class="tag good">Driveable from BR</span>
+              <span class="tag good">German import claims</span>
+              <span class="tag">Working + show activity</span>
+              <span class="tag warn">Type-check adults</span>
+            </div>
+            <p class="muted" style="margin:0;">
+              Logistics win (~NW of Houston). Limited litters, OFA or Euro hips claimed. Scrutinize for compact vs heavy — TX market often drifts big.
+            </p>
+            <div class="links">
+              <a href="https://lonecreekrottweilers.com/" target="_blank" rel="noopener">Website</a>
+              <a href="https://lonecreekrottweilers.com/german-rottweilers-our-dogs/" target="_blank" rel="noopener">Our dogs</a>
+              <a href="https://lonecreekrottweilers.com/german-rottweiler-puppies-for-sale/" target="_blank" rel="noopener">Puppies</a>
+              <a href="https://www.facebook.com/tommye.parker/" target="_blank" rel="noopener">Facebook updates</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="margin:0 0 0.75rem;font-size:0.85rem;color:var(--tier2);letter-spacing:0.06em;text-transform:uppercase;">Tier 2 — worth a look</h3>
+      <div class="breeder-list">
+        <article class="card breeder">
+          <div class="rank t2">4</div>
+          <div class="breeder-body">
+            <h3>Vom Hause Aarup — Ooltewah, TN</h3>
+            <div class="breeder-meta">
+              <span class="tag good">ADRK bloodlines claimed</span>
+              <span class="tag good">OFA + JLPP stated</span>
+              <span class="tag">TN access</span>
+              <span class="tag warn">Verify structure live</span>
+            </div>
+            <p class="muted" style="margin:0;">
+              Limited litters, home-raised language, import-line dams. Still confirm size/type on adults — marketing can outrun structure.
+            </p>
+            <div class="caveat"><strong>Check:</strong> adult side profiles + movement video before any deposit.</div>
+            <div class="links">
+              <a href="https://vomhauseaaruprottweilers.com/" target="_blank" rel="noopener">Website</a>
+              <a href="https://vomhauseaaruprottweilers.com/our-dogs" target="_blank" rel="noopener">Our dogs</a>
+              <a href="https://vomhauseaaruprottweilers.com/current-litter%2F-puppies" target="_blank" rel="noopener">Current litter</a>
+              <a href="https://vomhauseaaruprottweilers.com/pedigrees" target="_blank" rel="noopener">Pedigrees</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card breeder">
+          <div class="rank t2">5</div>
+          <div class="breeder-body">
+            <h3>Von Warterr — Quinlan, TX</h3>
+            <div class="breeder-meta">
+              <span class="tag good">Driveable (E of Dallas)</span>
+              <span class="tag">Euro/German pedigrees</span>
+              <span class="tag">Lots of photos</span>
+              <span class="tag warn">Can run heavy</span>
+            </div>
+            <p class="muted" style="margin:0;">
+              Established program, OFA or ADRK hips language, guardian positioning. Copy leans substantial bone / powerful heads — only advance if live adults stay athletic.
+            </p>
+            <div class="caveat"><strong>Note:</strong> docks tails (older practice). Pure ADRK/FCI today prefers natural tail.</div>
+            <div class="links">
+              <a href="https://www.vonwarterr.net/" target="_blank" rel="noopener">Website</a>
+              <a href="https://www.vonwarterr.net/current-rottweiler-litters" target="_blank" rel="noopener">Current litters</a>
+              <a href="https://www.facebook.com/347259832048174" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card breeder">
+          <div class="rank t2">6</div>
+          <div class="breeder-body">
+            <h3>Vom Hause Hushon — Delta, PA</h3>
+            <div class="breeder-meta">
+              <span class="tag good">Clear health posting</span>
+              <span class="tag good">ADRK dams</span>
+              <span class="tag">2027 timeline fit</span>
+              <span class="tag warn">Sire ~135 lb</span>
+            </div>
+            <p class="muted" style="margin:0;">
+              Transparent OFA/ADRK + JLPP, Hope vom Bierweg (KS-sired ADRK) and French/ADRK Talya. Pricing clear ($3k limited / $4k full). Good if you’re still 1–2 years out.
+            </p>
+            <div class="caveat"><strong>Type call:</strong> sire Colt (Serbian import) listed ~135 lb — heavier than classic German male target. Decide if the cross still reads “original” to your eye.</div>
+            <div class="links">
+              <a href="https://hushonrottweilers.com/" target="_blank" rel="noopener">Website</a>
+              <a href="https://hushonrottweilers.com/puppies" target="_blank" rel="noopener">Puppies / plans</a>
+              <a href="https://hushonrottweilers.com/males" target="_blank" rel="noopener">Males</a>
+              <a href="https://hushonrottweilers.com/females" target="_blank" rel="noopener">Females</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NETWORK -->
+    <section id="network">
+      <div class="section-head">
+        <h2>From Baton Rouge — network & paths</h2>
+        <div class="section-note">Don’t expect deep ADRK bench locally</div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>USRC clubs in reach</h3>
+          <ul class="clean">
+            <li><strong>DFW Working Rottweilers</strong> — Plano, TX (events + people)</li>
+            <li><strong>Central Florida Rottweiler Klub</strong> — Orlando area</li>
+            <li>Club directory: <a href="http://www.usrconline.org/usrc_clubs.html" target="_blank" rel="noopener">usrconline.org/usrc_clubs.html</a></li>
+            <li>USRC home: <a href="https://www.usrconline.org/" target="_blank" rel="noopener">usrconline.org</a></li>
+          </ul>
+          <p class="small muted" style="margin-top:0.75rem;">One BST/show weekend will train your eye faster than fifty websites.</p>
+        </article>
+        <article class="card">
+          <h3>Three paths</h3>
+          <ul class="clean">
+            <li><strong>A — Gold:</strong> ADRK-listed German kennel import. Directory on <a href="https://adrk.de/index.php/en/home-en/zuechter/zuechterverzeichnis/108-zuechter-deutschland" target="_blank" rel="noopener">adrk.de</a>.</li>
+            <li><strong>B — Strong US:</strong> Documented German import / first-gen programs (this shortlist).</li>
+            <li><strong>C — Young adult:</strong> Type + temperament already visible; sometimes smarter than a puppy.</li>
+          </ul>
+          <p class="small muted" style="margin-top:0.75rem;">Budget ballpark for serious German-type pup: often ~$3k–$5k+; imports/young titled stock can run more. Pickup / flight nanny beats mystery shipping mills.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PLAN -->
+    <section id="plan">
+      <div class="section-head">
+        <h2>24-month plan</h2>
+        <div class="section-note">No rush · type first</div>
+      </div>
+      <ol class="steps card">
+        <li>
+          <div>
+            <strong>Now — calibrate the eye</strong>
+            <span>Save adult photos from Tier 1 programs. Build a personal type board (side profile, front, moving).</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Next 3–6 months — touch the network</strong>
+            <span>Hit a USRC weekend (DFW or FL). Meet real dogs. Talk to handlers, not just websites.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Inquiry wave</strong>
+            <span>Email 2–3 programs with the same brief (template below). Demand clearance links + adult video.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Decide path</strong>
+            <span>US German-line puppy vs young adult vs true DE import. Logistics from BR matter.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Only then — deposit</strong>
+            <span>After conversation, papers, and type you actually like. Walk if anything is vague.</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section id="checklist">
+      <div class="section-head">
+        <h2>Adult evaluation checklist</h2>
+        <div class="section-note">Print / screenshot this</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Structure & type</h3>
+          <ul class="check-list">
+            <li><span class="box" aria-hidden="true"></span><span>Looks compact and athletic, not a meat slab</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>Muzzle length proportional (not smashed)</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>Clean topline / moves effortlessly on video</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>Male not sold primarily on extreme size</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>Both parents shown standing + moving</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Health, mind, program</h3>
+          <ul class="check-list">
+            <li><span class="box" aria-hidden="true"></span><span>OFA or HD/ED numbers verified on official site</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>JLPP results for both parents</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>Pedigree / import story is documentable</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>BH or breed test preferred; temperament story clear</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>Recent family-home references available</span></li>
+            <li><span class="box" aria-hidden="true"></span><span>Written contract + health guarantee + return clause</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMAIL -->
+    <section id="email">
+      <div class="section-head">
+        <h2>Inquiry email</h2>
+        <div class="section-note">Same brief to every program</div>
+      </div>
+      <div class="card">
+        <div class="copy-row">
+          <button class="copy" type="button" data-copy="inquiry">Copy email</button>
+        </div>
+        <pre class="email" id="inquiry">Subject: Family companion male — German-type Rottweiler (Baton Rouge)
+
+Hello,
+
+I’m in the Baton Rouge area and planning ahead for a male Rottweiler as a family guardian/companion. I will do serious obedience training. I am not looking for a high-drive sport-only prospect.
+
+What I want:
+• Documented German / ADRK-type bloodlines
+• Classic compact athletic build (original working type — not oversized modern pet type)
+• Stable, confident temperament for a home
+• Full health clearances on both parents (hips, elbows, JLPP) that I can verify
+
+Could you please share:
+1) Current or upcoming litters and expected timing
+2) Parent clearances (OFA links or German HD/ED + JLPP)
+3) Adult photos/video of sire and dam (standing + moving)
+4) Whether you place companion/family homes and how you match puppies
+5) Pricing and visit/pickup expectations
+
+Thank you — happy to jump on a call if useful.
+
+Lance Faucheux
+Baton Rouge, LA</pre>
+      </div>
+    </section>
+
+    <!-- PASSES -->
+    <section id="passes">
+      <div class="section-head">
+        <h2>Hard passes</h2>
+        <div class="section-note">Save time</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Skip</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pass-row">
+              <td>LA / TX Facebook “giant German” litters</td>
+              <td>Almost always the size/type drift you don’t want; papers thin.</td>
+            </tr>
+            <tr class="pass-row">
+              <td>“#1 USA / ship worldwide / deposit today” volume shops</td>
+              <td>Marketing machine &gt; selection. Even with “import bloodline” claims.</td>
+            </tr>
+            <tr class="pass-row">
+              <td>No verifiable hips/elbows/JLPP</td>
+              <td>Non-negotiable on this breed.</td>
+            </tr>
+            <tr class="pass-row">
+              <td>Rare colors, long coat as a feature</td>
+              <td>Wrong breeding priorities.</td>
+            </tr>
+            <tr class="pass-row">
+              <td>Only AKC pet papers, zero Euro/working story</td>
+              <td>Different selection culture than original German type.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources">
+      <div class="section-head">
+        <h2>Core links</h2>
+        <div class="section-note">Bookmark these</div>
+      </div>
+      <div class="card">
+        <ul class="clean">
+          <li><a href="https://adrk.de/index.php/en/home" target="_blank" rel="noopener">ADRK (Germany)</a> — parent club</li>
+          <li><a href="https://adrk.de/index.php/en/home-en/zuechter/zuechterverzeichnis/108-zuechter-deutschland" target="_blank" rel="noopener">ADRK breeder directory (DE)</a></li>
+          <li><a href="https://adrk.de/index.php/en/rasse/standard" target="_blank" rel="noopener">ADRK standard / size notes</a></li>
+          <li><a href="https://www.usrconline.org/" target="_blank" rel="noopener">USRC</a> — US FCI/ADRK-minded club</li>
+          <li><a href="https://ofa.org/" target="_blank" rel="noopener">OFA</a> — verify US clearances</li>
+          <li><a href="https://www.akc.org/dog-breeds/rottweiler/" target="_blank" rel="noopener">AKC Rottweiler page</a> — general US size band</li>
+          <li><a href="https://hushonrottweilers.com/adrk-terminology.html" target="_blank" rel="noopener">ADRK terminology plain-English guide</a> (third-party; useful decoder)</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div>Built for Lance · The Cooperative Agency internal research · not a breeder endorsement.</div>
+      <div>Source notes: ADRK / USRC / program sites reviewed in research session. Re-verify all health claims and availability before any deposit.</div>
+      <div>Last updated: <span id="updated"></span></div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("updated").textContent = new Date().toLocaleDateString("en-US", {
+      year: "numeric", month: "short", day: "numeric"
+    });
+
+    document.querySelectorAll("button.copy").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const id = btn.getAttribute("data-copy");
+        const text = document.getElementById(id)?.innerText || "";
+        try {
+          await navigator.clipboard.writeText(text);
+          btn.classList.add("ok");
+          btn.textContent = "Copied";
+          setTimeout(() => {
+            btn.classList.remove("ok");
+            btn.textContent = "Copy email";
+          }, 1600);
+        } catch (e) {
+          btn.textContent = "Select & copy manually";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
