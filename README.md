@@ -1,14 +1,10 @@
-# Field Notes · Vol. 01 — The Original Rottweiler
+# The Original Rottweiler — Breed Field Guide
 
-Magazine-style personal research brief for Lance: classic German-type Rottweiler as a family guardian/companion (Baton Rouge base).
+Public magazine-style buyer guide for classic German-type Rottweilers as companion/guardian dogs.
 
 ## Live
 
 https://thecooperativeagency.github.io/rottweiler-research/
-
-## Repo
-
-https://github.com/thecooperativeagency/rottweiler-research
 
 ## Local
 
@@ -18,23 +14,21 @@ python3 -m http.server 8765
 open http://127.0.0.1:8765
 ```
 
-## What’s inside
+## Contents
 
-- Full-bleed magazine hero + issue masthead
-- Brief, type targets, size-drift graphic
+- Why classic German type differs from commercial bulk
+- Visual type targets + size-drift graphic
 - Pedigree/health decoder
-- Tiered breeder shortlist with links + caveats
-- BR network + 24-month plan
-- Adult evaluation checklist
-- Copy-paste inquiry letter
-- Hard passes + desk references
-- Local photo assets under `assets/images/` (Wikimedia / Unsplash)
+- ADRK + USRC entry points
+- Breeder shortlist with live website screenshots
+- Buying process, checklists, hard passes
+- Desk reference links
 
-## Pattern note
+## Assets
 
-This is the pilot “vertical research magazine” format. Future topics can clone the shell:
-masthead → hero → numbered chapters → ranked cards → field checklist → letter → passes.
+- `assets/images/` — curated Wikimedia Rottweiler photos only
+- `assets/breeders/` — editorial screenshots of public club/breeder sites
 
 ## Disclaimer
 
-Internal research aid — not a breeder endorsement. Re-verify clearances and availability before any deposit.
+Research aid, not a breeder endorsement. Verify clearances and temperament yourself.
