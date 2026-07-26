@@ -1,31 +1,40 @@
-# German Rottweiler Research
+# Field Notes · Vol. 01 — The Original Rottweiler
 
-Personal research mini-site for Lance: original German-type Rottweiler as a family guardian/companion (Baton Rouge base).
+Magazine-style personal research brief for Lance: classic German-type Rottweiler as a family guardian/companion (Baton Rouge base).
 
 ## Live
 
-GitHub Pages (after enable):  
-`https://thecooperativeagency.github.io/rottweiler-research/`
+https://thecooperativeagency.github.io/rottweiler-research/
+
+## Repo
+
+https://github.com/thecooperativeagency/rottweiler-research
 
 ## Local
 
 ```bash
 cd ~/Projects/rottweiler-research
 python3 -m http.server 8765
-# open http://127.0.0.1:8765
+open http://127.0.0.1:8765
 ```
 
-## Contents
+## What’s inside
 
-- Locked brief (want / avoid)
-- Type targets (ADRK/FCI posture)
-- Pedigree & health decoder
-- Tiered breeder shortlist with links
-- BR network paths + 24-month plan
+- Full-bleed magazine hero + issue masthead
+- Brief, type targets, size-drift graphic
+- Pedigree/health decoder
+- Tiered breeder shortlist with links + caveats
+- BR network + 24-month plan
 - Adult evaluation checklist
-- Copy-paste inquiry email
-- Hard passes + core links
+- Copy-paste inquiry letter
+- Hard passes + desk references
+- Local photo assets under `assets/images/` (Wikimedia / Unsplash)
 
-## Note
+## Pattern note
 
-Internal research aid — not a breeder endorsement. Re-verify health clearances and availability before any deposit.
+This is the pilot “vertical research magazine” format. Future topics can clone the shell:
+masthead → hero → numbered chapters → ranked cards → field checklist → letter → passes.
+
+## Disclaimer
+
+Internal research aid — not a breeder endorsement. Re-verify clearances and availability before any deposit.
